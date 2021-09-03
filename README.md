@@ -1,4 +1,4 @@
-**Build Raspberry Pi 4 64bit kernel**
+**Build Raspberry Pi 4 64bit Kernel with Huge Pages**
 
 1. Install prerequisites
 
