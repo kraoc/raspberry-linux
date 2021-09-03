@@ -1,6 +1,6 @@
-**Build Raspberry Pi 4 64bit kernel
+**Build Raspberry Pi 4 64bit kernel**
 
-1. Install pre requisites
+1. Install prerequisites
 
     ```
     sudo apt install git bc bison flex libssl-dev make git bc bison flex libssl-dev make libc6-dev libncurses5-dev crossbuild-essential-arm64 libncurses5-dev raspberrypi-kernel-headers
@@ -11,7 +11,7 @@
     ```
     cd /opt
     mkdir -p /opt/kernel64
-    git clone --depth=1 --branch rpi-5.10.y https://github.com/raspberrypi/linux
+    git clone --depth=1 --branch [branch_tag] https://github.com/raspberrypi/linux
     ```
 
 3. Refresh kernel sources (for update previous builds)
@@ -30,12 +30,14 @@
 
 5. Use specific .config file
 
-    ```
     Backup config file:
-        mv .config .config.backup
+    ```
+    mv .config .config.backup
+    ```
 
     Copy fonctionnal config file:
-        cp rpi_kernel.config.txt .config
+    ```
+    cp rpi_kernel.config.txt .config
     ```
 
 6. Customising the kernel
@@ -70,14 +72,14 @@
 
 10. Make kernel use
 
-    ```
     Add at bottom of config.txt file:
-        kernel=kernel8_k64hp.img
+    ```
+    kernel=kernel8_k64hp.img
     ```
 
 11. Bonus, allow Huge Pages at boot time
 
-    ```
     Adjusting cmdline.txt file, add at end of line:
-        hugepagesz=1G hugepages=1
+    ```
+    hugepagesz=1G hugepages=1
     ```
