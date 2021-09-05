@@ -91,7 +91,14 @@
     This allow to load this specific kernel.
     In case of crash or not booting, just edit config.txt and put a # in front of the line to go back to default kernel.
 
-10. Bonus, allow Huge Pages at boot time
+10. Add Huge Page Filesystem
+
+    Add at bottom of /etc/fstab file
+    ```
+    hugetlbfs /dev/hugepages hugetlbfs rw,relatime,pagesize=1G 0 0
+    ```
+
+11. Bonus, allow Huge Pages at boot time
 
     Adjusting cmdline.txt file, add at end of line:
     ```
@@ -99,3 +106,17 @@
     ```
     
     *Not really needed after testing...*
+
+12. Reboot
+
+    Synchronize all disk access
+    ```
+    sudo sync
+    ```
+    
+    Optionnal, flush all caches
+    ```
+    sudo echo 3 > /proc/sys/vm/drop_caches
+    ```
+    
+    Then you can reboot your Pi and enjoy it with 64bit kernel + huge pages !
