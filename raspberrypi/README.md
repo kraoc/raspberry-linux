@@ -124,5 +124,6 @@
 13. Annexes
 
     You can grab and use *kernel8_k64hp.img.gz* in this directory.
+    
     It's a functionnal 64bit kernel v5.10-y compiled on my RPi with hugepage enabled.
     
