@@ -14,7 +14,8 @@
     Make a dedicated folder inside the opt path and get kernl sources
     ```
     cd /opt
-    mkdir -p /opt/kernel64
+    mkdir -p kernel64
+    cd kernel64
     git clone --depth=1 --branch [branch_tag] https://github.com/raspberrypi/linux
     ```
     
@@ -67,7 +68,7 @@
 
 7. Building the kernel
 
-    This is time consuming, consider approximatrly 2 hour
+    This is time consuming, consider approximatively 2 hour
     ```
     make -j4 Image modules dtbs
     make -j4 modules_install
