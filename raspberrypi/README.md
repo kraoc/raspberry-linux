@@ -11,15 +11,15 @@
 
     *If you already done this step and only want to update the kernel, then skip to step 3*
 
-    Make a dedicated folder inside the opt path and get kernl sources
+    Make a dedicated folder inside the opt path and get kernel sources:
     ```
     cd /opt
-    mkdir -p kernel64
-    cd kernel64
+    mkdir -p kernel
+    cd kernel
     git clone --depth=1 --branch [branch_tag] https://github.com/raspberrypi/linux
     ```
     
-    Currently done by
+    Currently done by:
     ```
     git clone --depth=1 --branch rpi-5.10.y https://github.com/raspberrypi/linux
     ```
@@ -34,7 +34,7 @@
 
 3. Refresh kernel sources
 
-    Only when you already compiled a kernel and needed update previous builds
+    Only when you already compiled a kernel and needed update previous builds:
     ```
     git pull
     ```
@@ -62,13 +62,13 @@
 
     *Allow to revert changes in case of problems*
     ```
-    sudo mkdir -p /boot/backups
+    sudo mkdir -p /boot/backups/
     sudo cp -R /boot/. /boot/backups/
     ```
 
 7. Building the kernel
 
-    This is time consuming, consider approximatively 2 hour
+    This is time consuming, *consider approximatively 2 hour*:
     ```
     make -j4 Image modules dtbs
     make -j4 modules_install
@@ -85,7 +85,7 @@
 
 9. Make kernel use
 
-    Add at bottom of /boot/config.txt file
+    Add at bottom of /boot/config.txt file:
     ```
     kernel=kernel8_k64hp.img
     ```
@@ -94,7 +94,7 @@
 
 10. Add Huge Page Filesystem
 
-    Add at bottom of /etc/fstab file
+    Add at bottom of /etc/fstab file:
     ```
     hugetlbfs /dev/hugepages hugetlbfs rw,relatime,pagesize=1G 0 0
     ```
@@ -110,12 +110,12 @@
 
 12. Reboot
 
-    Synchronize all disk access
+    Synchronize all disk access:
     ```
     sudo sync
     ```
     
-    Optionnal, flush all caches
+    Optionnal, flush all caches:
     ```
     sudo echo 3 > /proc/sys/vm/drop_caches
     ```
