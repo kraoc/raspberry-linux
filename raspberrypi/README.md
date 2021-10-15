@@ -34,6 +34,10 @@
     ```
     cd linux
     KERNEL=kernel8
+    ```
+    
+    Generate config:
+    ```
     make bcm2711_defconfig
     ```
 
@@ -57,6 +61,11 @@
     ```
 
 5. Customising the kernel
+
+    Disable debug info (*strip all debug info which speed up compile time*):
+    ```
+    scripts/config --disable DEBUG_INFO
+    ```
 
     ```
     CONFIG_LOCALVERSION="-v8-K64HP"
