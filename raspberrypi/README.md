@@ -24,7 +24,7 @@
     git clone --depth=1 --branch rpi-5.10.y https://github.com/raspberrypi/linux
     ```
 
-    Latest active branch:
+    For exemple:
     ```
     git clone --depth=1 --branch rpi-5.15.y https://github.com/raspberrypi/linux
     ```
